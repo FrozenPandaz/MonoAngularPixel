@@ -4,17 +4,20 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NxModule } from '@nrwl/nx';
 import { RouterModule } from '@angular/router';
 
-import { AppRoutingModule } from './app-routing.module';
-
 import { ChooseSizeModule } from 'apps/angular-pixel-illustrator/src/app/choose-size/choose-size.module';
+import { ChooseSizeComponent } from 'apps/angular-pixel-illustrator/src/app/choose-size/choose-size.component';
 
 @NgModule({
   imports: [
-    AppRoutingModule,
     BrowserModule,
     ChooseSizeModule,
     NxModule.forRoot(),
-    RouterModule.forRoot([], { initialNavigation: 'enabled' })],
+    RouterModule.forRoot([
+      {
+        path: '',
+        component: ChooseSizeComponent
+      }
+    ], { initialNavigation: 'enabled' })],
   declarations: [AppComponent],
   bootstrap: [AppComponent]
 })
