@@ -15,6 +15,11 @@ import { ChooseSizeComponent } from 'apps/angular-pixel-illustrator/src/app/choo
     RouterModule.forRoot([
       {
         path: '',
+        redirectTo: 'choose-size',
+        pathMatch: 'full'
+      },
+      {
+        path: 'choose-size',
         component: ChooseSizeComponent
       }
     ], { initialNavigation: 'enabled' })],
