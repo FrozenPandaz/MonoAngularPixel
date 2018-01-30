@@ -5,7 +5,12 @@ import { NxModule } from '@nrwl/nx';
 import { RouterModule, Params, RouterStateSnapshot } from '@angular/router';
 
 import { StoreModule } from '@ngrx/store';
-import { StoreRouterConnectingModule, routerReducer, RouterReducerState, RouterStateSerializer } from '@ngrx/router-store';
+import {
+  StoreRouterConnectingModule,
+  routerReducer,
+  RouterReducerState,
+  RouterStateSerializer
+} from '@ngrx/router-store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { ChooseSizeModule } from 'apps/angular-pixel-illustrator/src/app/choose-size/choose-size.module';
@@ -51,22 +56,25 @@ export const reducers = {
     StoreDevtoolsModule.instrument({
       maxAge: 5
     }),
-    RouterModule.forRoot([
-      {
-        path: '',
-        redirectTo: 'choose-size',
-        pathMatch: 'full'
-      },
-      {
-        path: 'choose-size',
-        component: ChooseSizeComponent
-      }
-    ], { initialNavigation: 'enabled' }),
+    RouterModule.forRoot(
+      [
+        {
+          path: '',
+          redirectTo: 'choose-size',
+          pathMatch: 'full'
+        },
+        {
+          path: 'choose-size',
+          component: ChooseSizeComponent
+        }
+      ],
+      { initialNavigation: 'enabled' }
+    ),
     StoreRouterConnectingModule.forRoot()
   ],
 
   declarations: [AppComponent],
   bootstrap: [AppComponent],
-  providers: [{ provide: RouterStateSerializer, useClass: CustomSerializer }],
+  providers: [{ provide: RouterStateSerializer, useClass: CustomSerializer }]
 })
 export class AppModule {}
