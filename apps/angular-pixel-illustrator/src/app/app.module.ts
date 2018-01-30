@@ -3,6 +3,8 @@ import { AppComponent } from './app.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NxModule } from '@nrwl/nx';
 import { RouterModule } from '@angular/router';
+import { StoreModule } from '@ngrx/store';
+import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
 
 import { ChooseSizeModule } from 'apps/angular-pixel-illustrator/src/app/choose-size/choose-size.module';
 import { ChooseSizeComponent } from 'apps/angular-pixel-illustrator/src/app/choose-size/choose-size.component';
@@ -12,6 +14,9 @@ import { ChooseSizeComponent } from 'apps/angular-pixel-illustrator/src/app/choo
     BrowserModule,
     ChooseSizeModule,
     NxModule.forRoot(),
+    StoreModule.forRoot({
+      router: routerReducer
+    }),
     RouterModule.forRoot([
       {
         path: '',
@@ -22,7 +27,12 @@ import { ChooseSizeComponent } from 'apps/angular-pixel-illustrator/src/app/choo
         path: 'choose-size',
         component: ChooseSizeComponent
       }
-    ], { initialNavigation: 'enabled' })],
+    ], { initialNavigation: 'enabled' }),
+    StoreRouterConnectingModule.forRoot({
+      stateKey: 'router' // name of reducer key
+    })
+  ],
+
   declarations: [AppComponent],
   bootstrap: [AppComponent]
 })
