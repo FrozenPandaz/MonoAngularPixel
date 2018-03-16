@@ -52,8 +52,8 @@ export const reducers = {
 
 @NgModule({
   imports: [
-    BrowserModule,
     AppRoutingModule,
+    BrowserModule,
     ChooseSizeModule,
     ChooseSizePageModule,
     NxModule.forRoot(),
@@ -61,20 +61,6 @@ export const reducers = {
     StoreDevtoolsModule.instrument({
       maxAge: 5
     }),
-    RouterModule.forRoot(
-      [
-        {
-          path: '',
-          redirectTo: 'choose-size',
-          pathMatch: 'full'
-        },
-        {
-          path: 'choose-size',
-          component: ChooseSizeComponent
-        }
-      ],
-      { initialNavigation: 'enabled' }
-    ),
     StoreRouterConnectingModule.forRoot()
   ],
 
