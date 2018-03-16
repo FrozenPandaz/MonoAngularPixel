@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ChooseSizePageComponent } from './choose-size-page.component';
-
-import { ChooseSizeComponent } from  '../../components/choose-size/choose-size.component';
+import { ChooseSizeModule } from  '../../components/choose-size/choose-size.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    ChooseSizeComponent
+    ChooseSizeModule
   ],
   declarations: [ChooseSizePageComponent]
 })

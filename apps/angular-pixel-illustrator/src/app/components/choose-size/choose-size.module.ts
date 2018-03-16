@@ -4,6 +4,7 @@ import { ChooseSizeComponent } from './choose-size.component';
 
 @NgModule({
   imports: [CommonModule],
-  declarations: [ChooseSizeComponent]
+  declarations: [ChooseSizeComponent],
+  exports: [ChooseSizeComponent]
 })
 export class ChooseSizeModule {}
