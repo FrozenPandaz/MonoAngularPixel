@@ -4,7 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NxModule } from '@nrwl/nx';
 import { RouterModule, Params, RouterStateSnapshot } from '@angular/router';
 
-import { ChooseSizePageModule } from './containers/choose-size-page/choose-size-page.module'
+import { ChooseSizePageModule } from './containers/choose-size-page/choose-size-page.module';
+import { AppRoutingModule } from './app.routing.module';
 
 import { StoreModule } from '@ngrx/store';
 import {
@@ -52,6 +53,7 @@ export const reducers = {
 @NgModule({
   imports: [
     BrowserModule,
+    AppRoutingModule,
     ChooseSizeModule,
     ChooseSizePageModule,
     NxModule.forRoot(),

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { ChooseSizePage } from './containers/choose-size-page/choose-size-page.component';
+import { ChooseSizePageComponent } from './containers/choose-size-page/choose-size-page.component';
 
 const routes: Routes = [
   {
@@ -11,7 +11,7 @@ const routes: Routes = [
   },
   {
     path: 'choose-size',
-    component:  ChooseSizePage
+    component:  ChooseSizePageComponent
   }
 ];
 
