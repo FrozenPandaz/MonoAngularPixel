@@ -4,6 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NxModule } from '@nrwl/nx';
 import { RouterModule, Params, RouterStateSnapshot } from '@angular/router';
 
+import { ChooseSizePageModule } from './containers/choose-size-page/choose-size-page.module'
+
 import { StoreModule } from '@ngrx/store';
 import {
   StoreRouterConnectingModule,
@@ -13,8 +15,8 @@ import {
 } from '@ngrx/router-store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
-import { ChooseSizeModule } from 'apps/angular-pixel-illustrator/src/app/choose-size/choose-size.module';
-import { ChooseSizeComponent } from 'apps/angular-pixel-illustrator/src/app/choose-size/choose-size.component';
+import { ChooseSizeModule } from 'apps/angular-pixel-illustrator/src/app/components/choose-size/choose-size.module';
+import { ChooseSizeComponent } from 'apps/angular-pixel-illustrator/src/app/components/choose-size/choose-size.component';
 
 export interface RouterStateUrl {
   url: string;
@@ -51,6 +53,7 @@ export const reducers = {
   imports: [
     BrowserModule,
     ChooseSizeModule,
+    ChooseSizePageModule,
     NxModule.forRoot(),
     StoreModule.forRoot(reducers),
     StoreDevtoolsModule.instrument({
