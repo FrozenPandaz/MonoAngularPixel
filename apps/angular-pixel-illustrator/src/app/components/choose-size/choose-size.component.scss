@@ -1,3 +1,8 @@
-.ChooseSize {
+:host.ChooseSize {
+  display: flex;
+  justify-content: center;
+}
+
+.ChooseSize__card {
   width: 300px;
 }

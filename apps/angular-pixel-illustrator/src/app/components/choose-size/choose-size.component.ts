@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostBinding, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-choose-size',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./choose-size.component.scss']
 })
 export class ChooseSizeComponent implements OnInit {
+  @HostBinding('class') class = 'ChooseSize';
   constructor() {}
 
   ngOnInit() {}
