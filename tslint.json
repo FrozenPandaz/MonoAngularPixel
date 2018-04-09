@@ -63,17 +63,8 @@
       true,
       "allow-null-check"
     ],
-    "typeof-compare": true,
     "unified-signatures": true,
     "variable-name": false,
-    "whitespace": [
-      true,
-      "check-branch",
-      "check-decl",
-      "check-operator",
-      "check-separator",
-      "check-type"
-    ],
     "directive-selector": [
       true,
       "attribute",
@@ -96,13 +87,22 @@
     "use-pipe-transform-interface": true,
     "component-class-suffix": true,
     "directive-class-suffix": true,
-
     "nx-enforce-module-boundaries": [
       true,
       {
-        "lazyLoad": [],
-        "allow": []
+        "allow": [],
+        "depConstraints": [
+          {
+            "sourceTag": "*",
+            "onlyDependOnLibsWithTags": [
+              "*"
+            ]
+          }
+        ]
       }
-    ]
+    ],
+    "deprecation": {
+      "severity": "warn"
+    }
   }
 }
