@@ -25,6 +25,7 @@
   },
   "private": true,
   "dependencies": {
+    "@angular-devkit/schematics": "^0.5.4",
     "@angular/animations": "5.2.7",
     "@angular/cdk": "^5.2.4",
     "@angular/common": "5.2.7",
@@ -42,9 +43,12 @@
     "@nrwl/nx": "0.6.19",
     "core-js": "^2.4.1",
     "rxjs": "^5.5.6",
-    "zone.js": "^0.8.19"
+    "zone.js": "^0.8.19",
+    "@ngrx/entity": "5.2.0",
+    "ngrx-store-freeze": "^0.2.1"
   },
   "devDependencies": {
+    "@angular-devkit/core": "^0.5.4",
     "@angular/cli": "1.7.1",
     "@angular/compiler-cli": "5.2.7",
     "@angular/language-service": "5.2.7",

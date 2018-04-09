@@ -15,9 +15,10 @@ import {
   RouterStateSerializer
 } from '@ngrx/router-store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-
-import { ChooseSizeModule } from 'apps/angular-pixel-illustrator/src/app/components/choose-size/choose-size.module';
 import { ChooseSizeComponent } from 'apps/angular-pixel-illustrator/src/app/components/choose-size/choose-size.component';
+import { EffectsModule } from '@ngrx/effects';
+import { environment } from '../environments/environment';
+import { storeFreeze } from 'ngrx-store-freeze';
 
 export interface RouterStateUrl {
   url: string;
@@ -54,14 +55,17 @@ export const reducers = {
   imports: [
     AppRoutingModule,
     BrowserModule,
-    ChooseSizeModule,
     ChooseSizePageModule,
     NxModule.forRoot(),
     StoreModule.forRoot(reducers),
     StoreDevtoolsModule.instrument({
       maxAge: 5
     }),
-    StoreRouterConnectingModule.forRoot()
+    StoreRouterConnectingModule.forRoot(),
+    StoreModule.forRoot({},{ metaReducers : !environment.production ? [storeFreeze] : [] }),
+    EffectsModule.forRoot([]),
+    !environment.production ? StoreDevtoolsModule.instrument() : [],
+    StoreRouterConnectingModule
   ],
 
   declarations: [AppComponent],
